@@ -32,7 +32,7 @@ public class BookTest {
 
     @Test
     public void saveTest() {
-        bookRepository.save(getBooks());
+//        bookRepository.save(getBooks());
     }
 
     @Test

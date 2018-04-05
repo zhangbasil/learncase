@@ -17,13 +17,13 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
  * @date 2018-01-03
  * @Version V1.0
  */
-@Document(indexName = "basil", type = "book")
+//@Document(indexName = "basil", type = "book")
 public class Book {
     @Id
     private Long id;
-    @Field(type = FieldType.String)
+//    @Field(type = FieldType.)
     private String author;
-    @Field(type = FieldType.String)
+//    @Field(type = FieldType.String)
     private String title;
     @Field(type = FieldType.Date)
     private Date releaseDate;

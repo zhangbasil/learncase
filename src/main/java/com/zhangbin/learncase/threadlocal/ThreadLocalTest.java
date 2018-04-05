@@ -44,6 +44,49 @@ class ThreadLocalTest {
             thread.start();
         }
 
+        byte a = 1;
+        long b = 2;
+        String c = "c";
+        switch (c) {
+            case "c":
+                break;
+        }
+
+    }
+
+    @Test
+    void hashTest() {
+        System.out.println("a.hashCode() = " + "a".hashCode());
+        System.out.println("b.hashCode() = " + "b".hashCode());
+        System.out.println("c.hashCode() = " + "c".hashCode());
+        System.out.println("ab.hashCode() = " + "ab".hashCode());
+        System.out.println("ac.hashCode() = " + "ac".hashCode());
+        System.out.println("A.hashCode() = " + "A".hashCode());
+        System.out.println("张斌.hashCode() = " + "张斌".hashCode());
+        System.out.println("zhangbin.hashCode() = " + "zhangbin".hashCode());
+    }
+
+    /**
+     *
+     * 线程顺序执行
+     */
+    @Test
+    void outputTest() {
+        Thread[] threads = new Thread[5];
+        for (int i = 0; i < 5; i ++) {
+            final int t = i;
+            threads[i] = new Thread(() -> System.out.println("线程：t" + (t + 1) + " = " + (t + 1)));
+        }
+        for (int i = 0; i < threads.length; i++) {
+            if (i > 0) {
+                try {
+                    threads[i - 1].join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            threads[i].start();
+        }
     }
 
 
