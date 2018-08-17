@@ -31,7 +31,24 @@ public class CompletableFutureCase {
 
     @Test
     void supplyAsyncTest() {
-        CompletableFuture.supplyAsync(this::getUsers);
+//        CompletableFuture.supplyAsync(this::getUsers);
+
+
+        CompletableFuture.runAsync(() -> {
+
+            System.out.println(" ================= ");
+            try {
+                Thread.sleep(5000L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println(" 00000000000000000000000000 ");
+
+
+        });
+
+
     }
 
     @Test

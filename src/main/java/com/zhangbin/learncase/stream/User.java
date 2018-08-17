@@ -1,5 +1,9 @@
 package com.zhangbin.learncase.stream;
 
+import lombok.EqualsAndHashCode;
+
+import java.util.Date;
+
 /**
  * @author zhangbin
  * @Type User
@@ -10,6 +14,7 @@ package com.zhangbin.learncase.stream;
 public class User {
     private Long id;
     private String name;
+    private Date date;
 
     public User(Long id, String name) {
         this.id = id;

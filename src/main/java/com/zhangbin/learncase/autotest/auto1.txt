@@ -1,0 +1,17 @@
+
+url http://hati.gops.guahao.cn/dataquery/queryview
+
+txt //*[@id="loginId"] zhangbin
+txt //*[@id="password"] zhangbin@03213
+
+click //*[@id="loginBtn"]
+
+
+click //*[@id="page-sidebar-menuA"]/li[2]/a/span[1]
+
+click //*[@id="page-sidebar-menuA"]/li[2]/ul/li[2]/a/span[1]
+
+
+click //*[@id="j1_256_anchor"]
+
+

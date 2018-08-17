@@ -1,5 +1,7 @@
 package com.zhangbin.learncase.stream;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -155,6 +157,21 @@ public class StreamCase {
         List<User> users = new ArrayList<>();
         IntStream.range(0, 1_000).forEach(index -> users.add(new User((long) index, "张三" + index)));
         return users;
+    }
+
+    @Test
+    public void streamTest() {
+
+        List<String> strings = new ArrayList<>(3_000_000);
+        IntStream.range(0, 3_000_000).forEach(i -> strings.add("zhangbin" + i));
+
+        List<String> strings2 = new ArrayList<>(3_000_000);
+        IntStream.range(0, 3_000_000).forEach(i -> strings.add("lisi" + i));
+
+        long start = System.currentTimeMillis();
+        List<String> collect = strings.parallelStream().filter(strings2::contains).collect(Collectors.toList());
+        System.out.println("流所用时间：" + (System.currentTimeMillis() - start));
+        System.out.println("collect = " + collect.size());
     }
 
 

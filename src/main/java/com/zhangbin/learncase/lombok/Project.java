@@ -4,7 +4,6 @@ import java.util.List;
 
 import lombok.AccessLevel;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
@@ -20,7 +19,6 @@ import lombok.experimental.FieldDefaults;
 //@Getter
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@EqualsAndHashCode(exclude = {"projects", "project"})
 public class Project {
     Long id;
     String name;

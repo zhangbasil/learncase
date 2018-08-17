@@ -15,7 +15,4 @@ public interface BookRepository extends ElasticsearchRepository<Book, Long> {
 
     @Override
     Page<Book> findAll(Pageable pageable);
-
-//    @Override
-    Book findOne(Long id);
 }

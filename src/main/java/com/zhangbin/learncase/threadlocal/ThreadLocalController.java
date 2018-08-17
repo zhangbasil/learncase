@@ -28,9 +28,14 @@ public class ThreadLocalController {
         return "count = " + count.getCount();
     }
 
-    @GetMapping(value = { "/a", "/a/*", "/a/b/**", "/a/b/c/**" })
+    @GetMapping(value = { "/a/**" })
     public String reqUrl() {
         return "ok";
+    }
+
+    @GetMapping(value = { "/a/b" })
+    public String reqUrl1() {
+        return "ab";
     }
 
 

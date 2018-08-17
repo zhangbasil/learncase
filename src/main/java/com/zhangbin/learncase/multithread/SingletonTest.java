@@ -2,6 +2,11 @@ package com.zhangbin.learncase.multithread;
 
 import org.junit.jupiter.api.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Objects;
+
 /**
  * @author zhangbin
  * @Type SingletonTest
@@ -11,7 +16,7 @@ import org.junit.jupiter.api.Test;
  */
 public class SingletonTest {
 
-    private static SingletonTest singleton;
+    private static volatile SingletonTest singleton;
     private static volatile int num = 200;
 
     public static SingletonTest getSingleton() {
@@ -28,15 +33,12 @@ public class SingletonTest {
 
     @Test
     void test() {
-        Thread[] threads = new Thread[2];
-        for (int i = 0; i< 2; i ++) {
+        Thread[] threads = new Thread[200];
+        for (int i = 0; i< 200; i ++) {
             final int index = i;
             threads[i] = new Thread(() -> {
-                if (index % 2 == 0) {
-                    printNum("a");
-                } else {
-                    printNum("b");
-                }
+                SingletonTest singleton = getSingleton();
+                System.out.println("singleton = " + singleton);
             });
         }
 
@@ -57,6 +59,47 @@ public class SingletonTest {
     }
 
 
+
+
+    public enum State {
+        ING(1, "进行中"), ED(2, "已免单"), UN(3, "未免单");
+
+        public Integer code;
+        public String name;
+
+        State(Integer code, String name) {
+            this.code = code;
+            this.name = name;
+        }
+
+        public static boolean isExist(Integer code) {
+            return Arrays.stream(State.values()).anyMatch(state -> state.code.equals(code));
+        }
+
+    }
+
+
+
+    @Test
+    void isExistTest() throws ParseException {
+
+        boolean exist = State.isExist(1);
+        System.out.println("exist = " + exist);
+
+        String str = "198509021";
+        String substring = str.substring(4);
+        System.out.println("substring = " + substring);
+
+
+        SimpleDateFormat sdf =  new SimpleDateFormat("yyyyMMdd");
+        sdf.parse(str);
+
+
+        System.out.println("sdf = " + sdf);
+
+        System.out.println("str = " + str);
+
+    }
 
 
 

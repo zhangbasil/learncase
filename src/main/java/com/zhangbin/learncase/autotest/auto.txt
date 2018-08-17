@@ -1,0 +1,13 @@
+
+url http://v.guahao-test.com/assistant/free/activity
+
+click //*[@id="app"]/div/div[2]/div
+
+click //*[@id="J_TelAccountFirst"]/form/div[5]/a
+
+txt //*[@id="username"] 18910647692
+txt //*[@id="password"] 091818
+
+txt //*[@id="captcha"] 1234
+
+click //*[@id="J_AccountLogin"]/form/div[5]/a

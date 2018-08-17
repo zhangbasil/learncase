@@ -32,13 +32,10 @@ public class BookTest {
 
     @Test
     public void saveTest() {
-//        bookRepository.save(getBooks());
     }
 
     @Test
     public void findOneTest() {
-        Book one = bookRepository.findOne(106L);
-        System.out.println("one = " + one);
 
         String query = "入门到放弃";
         QueryStringQueryBuilder stringQueryBuilder = new QueryStringQueryBuilder(query);

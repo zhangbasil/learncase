@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhangbin.learncase.mybaties.UserMapper">
+    <resultMap id="UserResultMap" type="com.zhangbin.learncase.mybaties.UserPO">
+        <result property="userName" column="user_name"/>
+        <result property="userPwd" column="user_pwd"/>
+        <result property="userSex" column="user_sex"/>
+        <result property="id" column="id"/>
+        <result property="gmtCreated" column="gmt_created"/>
+        <result property="gmtModified" column="gmt_modified"/>
+        <result property="isDeleted" column="is_deleted"/>
+    </resultMap>
+
+    <sql id="query_all_column">
+        id,
+        user_name,
+        user_pwd,
+        user_sex,
+        user_age,
+        is_deleted,
+        gmt_created,
+        gmt_modified
+    </sql>
+
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_user (
+        user_name,
+        user_pwd,
+        user_sex,
+        user_age,
+        gmt_created,
+        gmt_modified
+        ) VALUES (
+        #{userName},
+        #{userPwd},
+        #{userSex},
+        #{userAge},
+        now(),
+        now()
+        )
+    </insert>
+
+    <update id="logicDelete">
+        UPDATE t_user SET gmt_modified = now(), is_deleted = 1
+        WHERE id = #{id}
+    </update>
+
+    <update id="update" parameterType="com.zhangbin.learncase.mybaties.UserPO">
+        update t_user set gmt_modified = now(), user_pwd = #{userPwd}, user_age = #{userAge}
+        where id = #{id}
+    </update>
+
+    <select id="queryById" resultMap="UserResultMap">
+        SELECT
+        <include refid="query_all_column"/>
+        FROM t_user WHERE id = #{id}
+    </select>
+
+
+    <select id="query" resultMap="UserResultMap">
+        SELECT
+        <include refid="query_all_column"/>
+        FROM t_user
+        <include refid="query_condition"/>
+    </select>
+
+
+    <sql id="query_condition">
+        <where>
+            is_deleted = 0
+            <if test="id != null and id != ''">
+                AND id = #{id}
+            </if>
+            <if test="userName != null and userName !=''">
+                AND user_name LIKE concat('%',#{userName},'%')
+            </if>
+        </where>
+    </sql>
+
+
+</mapper>

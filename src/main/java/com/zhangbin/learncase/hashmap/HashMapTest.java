@@ -80,6 +80,17 @@ public class HashMapTest {
 
     }
 
+    @Test
+    void substringTest() {
+        String loginId = "18910647692";
+        if (loginId.length() > 2) {
+            loginId = loginId.substring(0, 2) + "*******" + loginId.substring(loginId.length() - 2, loginId.length());
+        }
+        System.out.println("loginId = " + loginId);
+    }
+
+
+
     private static void putMap() {
         for (int i =0; i < 500; i++) {
             numbers.put("key" + (i + 1), (i + 1));
@@ -94,4 +105,7 @@ public class HashMapTest {
         }
         numbers.forEach((key, value) -> System.out.println("key = " + key + "  value = " + value));
     }
+
+
+
 }

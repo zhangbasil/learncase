@@ -1,9 +1,15 @@
 package com.zhangbin.learncase.map;
 
+import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  *
@@ -23,7 +29,6 @@ public class MapOrder {
         System.out.println(" ======================= ");
         treeMapCase();
     }
-
 
     private static void hashMapCase() {
         Map<String, String> hashMap = new HashMap<>();
@@ -56,6 +61,17 @@ public class MapOrder {
         treeMap.put("d", "4");
         treeMap.put("ab", "89");
         treeMap.forEach((key, value) -> System.out.println("key = " + key + " value = " + value));
+    }
+
+    @Test
+    void flatMapTest() {
+        List<String> list = Arrays.asList("hello welcome", "world hello", "hello world", "hello world welcome");
+
+        List<Object> collect = list.stream().map(l -> {
+            Map<String, Object> ab = new HashMap<>();
+            return ab.put(l, l);
+        }).collect(Collectors.toList());
+        System.out.println("collect = " + collect);
     }
 
 }

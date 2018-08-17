@@ -1,9 +1,13 @@
 package com.zhangbin.learncase.stream;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -17,7 +21,11 @@ import java.util.stream.Stream;
 public class QueryCase {
 
     public static void main(String[] args) {
-        queryTest();
+//        queryTest();
+
+        String name = User.class.getName();
+        System.out.println("name = " + name);
+
 
     }
 
@@ -35,6 +43,20 @@ public class QueryCase {
         userList.add(new User(7L, null));
 
         List<String> collect = userList.stream().map(user -> "ab" + user.getId()).collect(Collectors.toList());
+    }
+
+
+    @Test
+    void test() {
+        Set<User> sets = new HashSet<>();
+
+        for (int i = 0; i < 10; i++) {
+            User u = new User(1L, "张斌");
+            sets.add(u);
+        }
+        System.out.println("sets = " + sets.size());
+
+
 
     }
 }
