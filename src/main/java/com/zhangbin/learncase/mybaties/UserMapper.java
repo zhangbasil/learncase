@@ -16,4 +16,6 @@ public interface UserMapper {
 
 //    @Select("SELECT * FROM t_user")
     List<UserPO> query();
+
+    int insert(UserPO user);
 }

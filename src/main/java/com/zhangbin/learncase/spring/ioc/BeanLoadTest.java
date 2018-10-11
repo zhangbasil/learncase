@@ -1,6 +1,5 @@
 package com.zhangbin.learncase.spring.ioc;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.core.io.ClassPathResource;
@@ -14,8 +13,8 @@ import org.springframework.core.io.ClassPathResource;
  */
 class BeanLoadTest {
 
-    @Test
-    void beanLoad() {
+
+    public static void main(String[] args) {
         ClassPathResource resource = new ClassPathResource("spring/spring-context.xml");
         DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);

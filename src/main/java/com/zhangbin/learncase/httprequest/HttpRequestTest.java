@@ -1,5 +1,6 @@
 package com.zhangbin.learncase.httprequest;
 
+import com.zhangbin.learncase.xxxx.SignUtil;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -25,13 +26,17 @@ import org.springframework.web.client.RestTemplate;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import static org.springframework.http.MediaType.APPLICATION_FORM_URLENCODED;
 
 /**
  * @author zhangbin
@@ -171,33 +176,58 @@ public class HttpRequestTest {
 
 
     @Test
-    void test() {
+    void test() throws UnsupportedEncodingException, NoSuchAlgorithmException {
 
-        String params = "{\t\n" +
-                "\t\"appkey\":\"weiyi\",\n" +
-                "\t\"timestamp\":\"1531193418471\",\n" +
-                "\t\"version\" : \"1.0\",\n" +
-                "\t\"sign\":\"606ebd053ad603f37af396ff2ab28bc7c77c1ec3\",\n" +
-                "\t\"accessToken\" : \"!TErhLXPYRO1j2z3jZJ16U7lu0nHTUoNlD6hpb1LSyHnvS-0v9gFR2QNKvjKoVkPYGuZHMRHEqOgjmQk4k99naXqhu-QMTaw0dcordQaWnDnmvkXcMYj5VfW-6dH5viSiJiU7GsZ_Ed-fICZWD0cKA9NncWXPIxLDsfg28lJ3tyI1LLtYwhs-7-ZhIR4Hzfz4K2\"\n" +
-                "}";
+
+//        {
+//            "appkey": "65403279",
+//                "channelNumber": "C00068",
+//                "method": "": "xxxx.user.vipbyredeem",
+//                em ","
+//            openMobile ":"
+//            13065725586 ","
+//            packageType ":"
+//            2 ","
+//            serialNumber ":"
+//            P1534847605223100018 ","
+//            timestamp ":"
+//            20180821063325 ","
+//            sign ":"
+//            A8FA45DE65B6A8A8CF79F42753843A31 "}
+//
+
+        String appSecret = "0590B991AC70BBE40609685F4CBA2BB2";
+        String reqUrl = "http://gw.api.xxxx-test.com/router/rest";
+
+        Map<String, Object> params = new HashMap<>();
+        params.put("openMobile", "13065725586");
+        params.put("packageType", "2");
+        params.put("serialNumber", "P1534847605223100018");
+        params.put("channelNumber", "C00068");
+
+
+//        String sign = SignUtil.createSign(params, appSecret);
+        String sign = "A8FA45DE65B6A8A8CF79F42753843A31";
+        System.out.println("sign = " + sign);
 
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.setContentType(APPLICATION_FORM_URLENCODED);
+        headers.set("appkey", "65403279");
+        headers.set("method", "xxxx.user.vipbyredeem");
+        headers.set("sign", sign);
+        headers.set("timestamp", "20180821063325");
+
 
         org.springframework.http.HttpEntity httpEntity = new org.springframework.http.HttpEntity(params, headers);
 
 //        ResponseEntity<String> response = restTemplate.postForEntity(fosunReqestUrl, httpEntity, String.class);
 
-        String s = restTemplate.postForObject(fosunReqestUrl, httpEntity, String.class);
+        String s = restTemplate.postForObject(reqUrl, httpEntity, String.class);
         System.out.println("s = " + s);
-//        boolean equals = response.getStatusCode().equals(org.springframework.http.HttpStatus.OK);
-//        if (equals) {
-//            String body = response.getBody();
-//            System.out.println("body = " + body);
-//        }
 
     }
+
 
 
 }

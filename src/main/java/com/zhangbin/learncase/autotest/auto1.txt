@@ -1,8 +1,8 @@
 
-url http://hati.gops.guahao.cn/dataquery/queryview
+url http://hati.gops.xxxx.cn/dataquery/queryview
 
-txt //*[@id="loginId"] zhangbin
-txt //*[@id="password"] zhangbin@03213
+txt //*[@id="loginId"] zhangbin。。。
+txt //*[@id="password"] 0000000
 
 click //*[@id="loginBtn"]
 

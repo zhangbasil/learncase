@@ -29,7 +29,7 @@ public class AutoTest {
     void test() throws InterruptedException {
 
         init();
-        driver.get("http://n.guahao-test.com/member/bigmember/page");
+        driver.get("http://n.xxxx-test.com/member/bigmember/page");
 
         Thread.sleep(2000);
 

@@ -1,8 +1,11 @@
 package com.zhangbin.learncase.mybaties;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalTime;
 
@@ -16,6 +19,8 @@ import java.time.LocalTime;
 @Getter
 @Setter
 @ToString
+@Accessors(chain = true)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserPO {
     Long id;
     LocalTime gmtCreated;
@@ -24,5 +29,6 @@ public class UserPO {
     String userName;
     String userPwd;
     String userSex;
+    Integer userAge;
 
 }

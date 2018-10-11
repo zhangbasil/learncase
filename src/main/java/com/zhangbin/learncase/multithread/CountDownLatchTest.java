@@ -2,9 +2,13 @@ package com.zhangbin.learncase.multithread;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author zhangbin
@@ -14,6 +18,60 @@ import java.util.concurrent.Executors;
  * @Version V1.0
  */
 public class CountDownLatchTest {
+
+
+    @Test
+    void doTest() throws InterruptedException {
+        final List<Integer> datas = new ArrayList<>();
+        final ExecutorService TASK_POOL = Executors.newFixedThreadPool(20);
+        Runnable task = () -> {
+            for (int i = 0; i < 100; i++) {
+                datas.add(i);
+            }
+        };
+        for (int i = 0; i < 20; i++) {
+            TASK_POOL.execute(task);
+        }
+        TASK_POOL.shutdown();
+        TASK_POOL.awaitTermination(5, TimeUnit.SECONDS);
+        System.out.println(datas.size());
+    }
+
+
+    @Test
+    void doTestWithCountDown() throws InterruptedException {
+        final List<Integer> datas = new ArrayList<>();
+        final ExecutorService TASK_POOL = Executors.newFixedThreadPool(20);
+        final CountDownLatch countDownLatch = new CountDownLatch(20);
+        Runnable task = () -> {
+            try {
+                countDownLatch.await();//这里等待其他线程就绪后开始放行
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            for (int i = 0; i < 100; i++) {
+                datas.add(i);
+            }
+        };
+        for (int i = 0; i < 20; i++) {
+            TASK_POOL.execute(task);
+            countDownLatch.countDown();//每个任务提交完毕后执行
+        }
+        TASK_POOL.shutdown();
+        TASK_POOL.awaitTermination(50, TimeUnit.SECONDS);
+        System.out.println(datas.size());
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     @Test
     void test() throws InterruptedException {
@@ -60,8 +118,6 @@ public class CountDownLatchTest {
         }
     }
 
-
-
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Test
@@ -72,6 +128,7 @@ public class CountDownLatchTest {
         }
 
     }
+
     class Player implements Runnable {
         private final CountDownLatch countDownLatch;
 
@@ -97,8 +154,7 @@ public class CountDownLatchTest {
         }
     }
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Test
     void workerRunnableTest() throws InterruptedException {
@@ -111,6 +167,7 @@ public class CountDownLatchTest {
         }
 
     }
+
     class WorkerRunnable implements Runnable {
         private final CountDownLatch countDownLatch;
         private final int i;
@@ -132,7 +189,5 @@ public class CountDownLatchTest {
             System.out.println("i = " + i);
         }
     }
-
-
 
 }

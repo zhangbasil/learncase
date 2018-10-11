@@ -38,6 +38,9 @@ public class MybatisLearn {
 //        Object obj = sqlSession.selectOne("queryById", 16L);
 //        System.out.println("obj = " + obj);
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        int insert = mapper.insert(new UserPO().setUserName("张思思").setUserPwd("123").setUserSex("男").setUserAge(10));
+        System.out.println("insert = " + insert);
         System.out.println("mapper = " + mapper);
         UserPO userPO = mapper.queryById(19L);
         System.out.println("userPO = " + userPO);

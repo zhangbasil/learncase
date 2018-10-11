@@ -20,7 +20,7 @@ public class UserService {
     private final static Map<String, User> data = new HashMap<>();
 
     static {
-        data.put("1", new User("1", "abc", "abc@guahao.com"));
+        data.put("1", new User("1", "abc", "abc@xxxx.com"));
     }
 
 
