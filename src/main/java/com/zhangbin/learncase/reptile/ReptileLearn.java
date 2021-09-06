@@ -41,10 +41,13 @@ public class ReptileLearn {
 
     public static void main(String[] args) throws Exception {
 
-        List<Province> provinces = listProvince();
-        System.out.println("provinces.size() = " + provinces.size());
-        listTest(provinces);
+//        List<Province> provinces = listProvince();
+//        System.out.println("provinces.size() = " + provinces.size());
+//        listTest(provinces);
 //        oneTest(provinces);
+
+
+        chaogu();
 
     }
 
@@ -146,7 +149,7 @@ public class ReptileLearn {
                 "&" + "year=2017" +
                 "#" + "page=" + page +
                 "&" + "value=" + "NaN";
-        Document document = getDocument(requestUrl);
+        Document document = DocumentUtils.getDocument(requestUrl);
         Elements trs = document.select("table.index_table > tbody > tr");
 //        String temp = "";
 
@@ -193,7 +196,7 @@ public class ReptileLearn {
                 "&" + "year=2017" +
                 "#" + "page=" + page +
                 "&" + "value=" + "NaN";
-        Document document = getDocument(requestUrl);
+        Document document = DocumentUtils.getDocument(requestUrl);
         Elements trs = document.select("table.index_table > tbody > tr");
 //        String temp = "";
 
@@ -229,7 +232,7 @@ public class ReptileLearn {
     }
 
     public static boolean hasNext(String url) {
-        Document document = getDocument(url);
+        Document document = DocumentUtils.getDocument(url);
         Elements as = document.select("div.yahoo2 > span");
         for (Element a : as) {
             String text = a.text();
@@ -242,7 +245,7 @@ public class ReptileLearn {
 
     private static List<Province> listProvince() {
 
-        Document document = getDocument(URL + "?province=1&year=2017#page=1&value=NaN");
+        Document document = DocumentUtils.getDocument(URL + "?province=1&year=2017#page=1&value=NaN");
 
         Elements lis = document.select("ul.nav_left > li");
 
@@ -270,33 +273,14 @@ public class ReptileLearn {
 
     }
 
-    public static Document getDocument(String url) {
-        Document document = null;
-        try {
-            // 创建模拟浏览器，参数可以指定不同类型的浏览器
-            WebClient webClient = new WebClient();
 
-            // 启用JS解释器，默认为true
-            webClient.getOptions().setJavaScriptEnabled(true);
 
-            // 禁用css支持
-            webClient.getOptions().setCssEnabled(false);
+    private static void chaogu() {
+        String url = "http://blog.sina.com.cn/s/blog_486e105c01000cih.html";
 
-            // js运行错误时，是否抛出异常
-            webClient.getOptions().setThrowExceptionOnScriptError(false);
+        Document document = DocumentUtils.getDocument(url);
 
-            // 设置超时
-            webClient.getOptions().setTimeout(20000);
-
-            // page 就是你获取到的html，你可以进一步的解析数据
-            HtmlPage page = webClient.getPage(url);
-
-            document = Jsoup.parse(page.asXml());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return document;
+        System.out.println("document = " + document);
     }
 
 

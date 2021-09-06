@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <script src="https://d4.sina.com.cn/litong/zhitou/wenjing28/js/postMan.js">
+    </script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>
+      教你炒股票78：继续说线段的划分_缠中说禅_新浪博客
+    </title> 
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8,chrome=1"> 
+  <meta name="renderer" content="webkit"> 
+  <meta name="keywords" content="教你炒股票78：继续说线段的划分_缠中说禅_新浪博客,缠中说禅,缠中说禅,教你炒股票"> 
+  <meta name="description" content="教你炒股票78：继续说线段的划分_缠中说禅_新浪博客,缠中说禅,"> 
+  <meta http-equiv="mobile-agent" content="format=html5; url=http://blog.sina.cn/dpool/blog/s/blog_486e105c01000cio.html?vt=4"> 
+  <meta http-equiv="mobile-agent" content="format=wml; url=http://blog.sina.cn/dpool/blog/ArtRead.php?nid=486e105c01000cio&amp;vt=1"> 
+  <script type="text/javascript">
+//<![CDATA[
+
+try{
+document.execCommand("BackgroundImageCache", false, true);
+}catch(e){}
+
+//]]>
+    </script> 
+  <script type="text/javascript">
+//<![CDATA[
+
+    
+window.staticTime=new Date().getTime();
+;(function () {
+    if(/\/{2,}/.test(location.pathname)){
+        location.href = 'http://blog.sina.com.cn' + location.pathname.replace(/\/+/g,'/') + location.search;
+    }
+})();
+
+//]]>
+    </script> 
+  <link rel="pingback" href="http://upload.move.blog.sina.com.cn/blog_rebuild/blog/xmlrpc.php"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://upload.move.blog.sina.com.cn/blog_rebuild/blog/xmlrpc.php?rsd"> 
+  <link href="http://blog.sina.com.cn/blog_rebuild/blog/wlwmanifest.xml" type="application/wlwmanifest+xml" rel="wlwmanifest"> 
+  <link rel="alternate" type="application/rss+xml" href="http://blog.sina.com.cn/rss/1215172700.xml" title="RSS"> 
+  <link href="http://simg.sinajs.cn/blog7style/css/conf/blog/article.css" type="text/css" rel="stylesheet"> 
+  <link href="http://simg.sinajs.cn/blog7style/css/common/common.css" type="text/css" rel="stylesheet"> 
+  <link href="http://simg.sinajs.cn/blog7style/css/blog/blog.css" type="text/css" rel="stylesheet"> 
+  <link href="http://simg.sinajs.cn/blog7style/css/module/common/blog.css" type="text/css" rel="stylesheet"> 
+  <style id="tplstyle" type="text/css">
+      @charset "utf-8";@import url("http://simg.sinajs.cn/blog7newtpl/css/3/3_9/t.css");
+
+    </style> 
+  <style id="positionstyle" type="text/css">
+      
+.sinabloghead .blogtoparea{ left:165px;top:113.938px;}
+.sinabloghead .blognav{ left:120px;top:182.844px;}
+
+    </style> 
+  <style id="bgtyle" type="text/css">
+    </style> 
+  <style id="headtyle" type="text/css">
+    </style> 
+  <style id="navtyle" type="text/css">
+    </style> 
+  <script type="text/javascript" src="http://d1.sina.com.cn/litong/zhitou/sspnew.js">
+    </script> 
+  <script src="http://i.sso.sina.com.cn/js/ssologin.js" async>
+    </script> 
+  <script src="http://sjs.sinajs.cn/blog7/article.js?714.js">
+    </script> 
+  <script src="http://d5.sina.com.cn/litong/zhitou/sinaads/release/sinaads.js">
+    </script> 
+ </head> 
+ <body> 
+  <!--$sinatopbar--> 
+  <div style="z-index:512;" class="nsinatopbar"> 
+   <div style="position:absolute;left:0;top:0;" id="trayFlashConnetion"> 
+   </div> 
+   <div class="ntopbar_main"> 
+    <a id="login_bar_logo_link_350" href="http://blog.sina.com.cn" target="_blank"> <img class="ntopbar_logo" src="http://simg.sinajs.cn/blog7style/images/common/topbar/topbar_logo.gif" width="100" alt="新浪博客"> </a> 
+    <div class="ntopbar_floatL"> 
+     <div class="ntopbar_search" id="traySearchBar" style="display:none;"> 
+     </div> 
+     <div class="ntopbar_ad" id="loginBarActivity" style="display:none;"> 
+     </div> 
+    </div> 
+    <div class="ntopbar_loading"> 
+     <img src="http://simg.sinajs.cn/blog7style/images/common/loading.gif"> 加载中… 
+    </div> 
+   </div> 
+  </div> 
+  <!--$end sinatopbar--> 
+  <div class="sinabloga" id="sinabloga"> 
+   <div id="sinablogb" class="sinablogb"> 
+    <div id="sinablogHead" class="sinabloghead"> 
+     <div style="display: none;" id="headflash" class="headflash"> 
+     </div> 
+     <div id="headarea" class="headarea"> 
+      <div id="blogTitle" class="blogtoparea"> 
+       <h1 id="blogname" class="blogtitle"> <a href="http://blog.sina.com.cn/chzhshch"> <span id="blognamespan"> 加载中... </span> </a> </h1> 
+       <div id="bloglink" class="bloglink"> 
+        <a href="http://blog.sina.com.cn/chzhshch"> http://blog.sina.com.cn/chzhshch </a> 
+        <a onclick="return false;" class="CP_a_fuc" href="#" id="SubscribeNewRss"> [ <cite> 订阅 </cite> ] </a> 
+        <a class="CP_a_fuc" href="javascript:void(scope.pa_add.add('1215172700'));"> [ <cite> 手机订阅 </cite> ] </a> 
+       </div> 
+      </div> 
+      <div class="blognav" id="blognav"> 
+       <div id="blognavBg" class="blognavBg"> 
+       </div> 
+       <div class="blognavInfo"> 
+        <span> <a href="http://blog.sina.com.cn/chzhshch"> 首页 </a> </span> 
+        <span> <a class="on" href="http://blog.sina.com.cn/s/articlelist_1215172700_0_1.html"> 博文目录 </a> </span> 
+        <!--<span><a href="">图片</a></span>--> 
+        <span class="last"> <a href="http://blog.sina.com.cn/s/profile_1215172700.html"> 关于我 </a> </span> 
+       </div> 
+      </div> 
+      <div class="autoskin" id="auto_skin"> 
+      </div> 
+      <div class="adsarea"> 
+       <a href="#"> 
+        <div id="template_clone_pic" class="pic"> 
+        </div> </a> 
+       <div id="template_clone_link" class="link wdc_HInf"> 
+       </div> 
+       <div id="template_clone_other" class="other"> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <!--主题内容开始 --> 
+    <div class="sinablogbody" id="sinablogbody"> 
+     <!--第一列start--> 
+     <div id="column_1" class="SG_colW21 SG_colFirst"> 
+      <div class="SG_conn" id="module_901"> 
+       <div class="SG_connHead"> 
+        <span class="title" comp_title="个人资料"> 个人资料 </span> 
+        <span class="edit"> </span> 
+       </div> 
+       <div class="SG_connBody"> 
+        <div class="info"> 
+         <div class="info_img" id="comp_901_head"> 
+          <img src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" real_src="http://p5.sinaimg.cn/1215172700/180/1" id="comp_901_head_image" width="180" height="180" alt="缠中说禅" title="缠中说禅"> 
+         </div> 
+         <div class="info_txt"> 
+          <div class="info_nm"> 
+           <img id="comp_901_online_icon" style="display:none;" class="SG_icon SG_icon1" src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" width="15" height="15" align="absmiddle"> 
+           <span class="SG_txtb"> <strong id="ownernick"> 缠中说禅 </strong> </span> 
+           <div class="clearit"> 
+           </div> 
+          </div> 
+          <div class="info_btn1"> 
+           <a target="_blank" href="http://weibo.com/u/1215172700?source=blog" class="SG_aBtn SG_aBtn_ico"> <cite> <img class="SG_icon SG_icon51" src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" width="15" height="15" align="absmiddle"> 微博 </cite> </a> 
+           <div class="clearit"> 
+           </div> 
+          </div> 
+          <div class="SG_j_linedot"> 
+          </div> 
+          <div class="info_locate" id="info_locate_id"> 
+           <div class="SG_j_linedot"> 
+           </div> 
+           <div class="info_btn2"> 
+            <p> <a href="javascript:void(0);" class="SG_aBtn " id="comp901_btn_invite"> <cite> 加好友 </cite> </a> <a href="javascript:void(0);" class="SG_aBtn" id="comp901_btn_sendpaper"> <cite> 发纸条 </cite> </a> </p> 
+            <p> <a href="http://blog.sina.com.cn/s/profile_1215172700.html#write" class="SG_aBtn" id="comp901_btn_msninfo"> <cite> 写留言 </cite> </a> <a href="#" onclick="return false;" class="SG_aBtn" id="comp901_btn_follow"> <cite onclick="Module.SeeState.add()"> 加关注 </cite> </a> </p> 
+            <div class="clearit"> 
+            </div> 
+           </div> 
+           <div class="SG_j_linedot"> 
+           </div> 
+          </div> 
+          <div class="info_list"> 
+           <ul class="info_list1"> 
+            <li> <span class="SG_txtc"> 博客等级： </span> <span id="comp_901_grade"> <img src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" real_src="http://simg.sinajs.cn/blog7style/images/common/number/2.gif"> <img src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" real_src="http://simg.sinajs.cn/blog7style/images/common/number/7.gif"> </span> </li> 
+            <li> <span class="SG_txtc"> 博客积分： </span> <span id="comp_901_score"> <strong> 0 </strong> </span> </li> 
+           </ul> 
+           <ul class="info_list2"> 
+            <li> <span class="SG_txtc"> 博客访问： </span> <span id="comp_901_pv"> <strong> 199,405,642 </strong> </span> </li> 
+            <li> <span class="SG_txtc"> 关注人气： </span> <span id="comp_901_attention"> <strong> 124,630 </strong> </span> </li> 
+            <li> <span class="SG_txtc"> 获赠金笔： </span> <strong id="comp_901_d_goldpen"> 0支 </strong> </li> 
+            <li> <span class="SG_txtc"> 赠出金笔： </span> <strong id="comp_901_r_goldpen"> 0支 </strong> </li> 
+            <li class="lisp" id="comp_901_badge"> <span class="SG_txtc"> 荣誉徽章： </span> </li> 
+           </ul> 
+          </div> 
+          <div class="clearit"> 
+          </div> 
+         </div> 
+         <div class="clearit"> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="SG_connFoot"> 
+       </div> 
+      </div> 
+      <div id="module_903" class="SG_conn "> 
+       <div class="SG_connHead"> 
+        <span comp_title="相关博文" class="title"> 相关博文 </span> 
+        <span class="edit"> </span> 
+       </div> 
+       <div class="SG_connBody"> 
+        <div class="atcTitList relaList"> 
+         <ul class=""> 
+          <li class="SG_j_linedot1" style="display:none;"> <p id="atcTitLi_SLOT_41" class="atcTitCell_tit SG_dot" style="display:none"> </p> </li> 
+          <li class="SG_j_linedot1" style="display:none;"> <p id="atcTitLi_SLOT_42" class="atcTitCell_tit SG_dot" style="display:none"> </p> </li> 
+         </ul> 
+         <div class="atcTit_more"> 
+          <span class="SG_more"> <a href="http://blog.sina.com.cn/" target="_blank"> 更多&gt;&gt; </a> </span> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="SG_connFoot"> 
+       </div> 
+      </div> 
+      <div id="module_904_top_ad"> 
+      </div> 
+      <div class="SG_conn " id="module_904"> 
+       <div class="SG_connHead"> 
+        <span class="title"> 推荐博文 </span> 
+       </div> 
+       <div class="SG_connBody "> 
+        <div class="atcTitList relaList"> 
+         <ul class=""> 
+         </ul> 
+         <div id="atcPicList"> 
+         </div> 
+         <div class="atcTit_more"> 
+          <span class="SG_more"> <a target="_blank" href="http://blog.sina.com.cn/"> 查看更多 </a> &gt;&gt; </span> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="SG_connFoot"> 
+       </div> 
+      </div> 
+     </div> 
+     <!--第一列end--> 
+     <!--第二列start--> 
+     <div id="column_2" class="SG_colW73"> 
+      <div id="module_920" class="SG_conn"> 
+       <div class="SG_connHead"> 
+        <span comp_title="正文" class="title"> 正文 </span> 
+        <span class="edit"> <span id="articleFontManage" class="fontSize"> 字体大小： <a href="javascript:;" onclick="changeFontSize(2);return false;"> 大 </a> <strong> 中 </strong> <a href="javascript:;" onclick="changeFontSize(0);return false;"> 小 </a> </span> </span> 
+       </div> 
+       <div class="SG_connBody"> 
+        <!--博文正文 begin --> 
+        <div id="articlebody" class="artical" favmd5="{&quot;486e105c01000cio&quot;:&quot;7f1ba0e0f8f47987775ece03ebb3212b&quot;}"> 
+         <div class="articalTitle"> 
+          <span class="img1"> <a href="http://news.sina.com.cn/437/2008/0703/24.html" target="_blank"> <img width="16" height="18" align="absmiddle" title="此博文通过手机撰写(手机访问sina.cn)" src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" class="SG_icon SG_icon105"> </a> </span> 
+          <h2 id="t_486e105c01000cio" class="titName SG_txta"> 教你炒股票78：继续说线段的划分 </h2> 
+          <span class="time SG_txtc"> (2007-09-06 22:28:31) </span> 
+          <div class="turnBoxzz"> 
+           <a href="javascript:;" class="SG_aBtn SG_aBtn_ico SG_turn" action-type="reblog" action-data="{srcBlog:1, blogId:'486e105c01000cio'}"> <cite> <img class="SG_icon SG_icon111" src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" width="15" height="15" align="absmiddle"> 转载 <em class="arrow"> ▼ </em> </cite> </a> 
+          </div> 
+         </div> 
+         <div class="articalTag" id="sina_keyword_ad_area"> 
+          <table> 
+           <tbody> 
+            <tr> 
+             <td class="blog_tag"> <script>
+//<![CDATA[
+
+					var $tag='缠中说禅,教你炒股票';
+					var $tag_code='a1fe074a6f15371abed7add51faaae86';
+					var $r_quote_bligid='486e105c01000cio';
+					var $worldcup='0';
+					var $worldcupball='0';
+					
+//]]>
+                            </script> <span class="SG_txtb"> 标签： </span> 
+              <!--<h3><a href="" target="_blank"></a></h3>--> <h3> 缠中说禅 </h3> 
+              <!--<h3><a href="" target="_blank"></a></h3>--> <h3> 教你炒股票 </h3> </td> 
+             <td class="blog_class"> <span class="SG_txtb"> 分类： </span> <a target="_blank" href="http://blog.sina.com.cn/s/articlelist_1215172700_10_1.html"> 时政经济（缠中说禅经济学） </a> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+         </div> 
+         <!-- 正文开始 --> 
+         <div id="sina_keyword_ad_area2" class="articalContent   "> 
+          <div> 
+           <p align="center"> <font style="FONT-SIZE: 56px"> <strong> 悼念 </strong> </font> </p> 
+           <p align="center"> <font style="FONT-SIZE: 32px"> 帕瓦罗蒂 </font> </p> 
+           <p align="center"> （虽然历史上有太多人比你好，但当代，你是最好的） </p> 
+           <p align="center"> &nbsp; <wbr> </p> 
+           <p align="center"> <font style="FONT-SIZE: 56px" color="#FF0000"> <strong> 声讨 </strong> </font> </p> 
+           <p align="center"> <font style="FONT-SIZE: 20px"> 丁毅 </font> </p> 
+           <p align="center"> （样子丑陋不是错，出来忽悠就不行） </p> 
+           <p align="center"> <font style="FONT-SIZE: 20px"> 戴玉强 </font> </p> 
+           <p align="center"> （声音油滑，台风造作，当快男又太老，还是买块豆腐或直接磨墙吧） </p> 
+           <p align="center"> <font style="FONT-SIZE: 20px"> 范竞马 </font> </p> 
+           <p align="center"> （本来水平比前两者高多了，一和他们忽悠所谓华人三高，就对你彻底失望） </p> 
+           <p> &nbsp; <wbr> </p> 
+           <p> &nbsp; <wbr> </p> 
+           <p> <font style="FONT-SIZE: 18px" color="#FF0000"> <strong> 注意，各位有时候不要太神经质，本ID现在什么新股票都不会买，要搞也只搞原来低位买的。本ID最后一只股票，这里的人都知道，就是002149，在上市第一天买的，当天贴了点成交记录，几小时后删除，后来怎么样，大家都看见了。 </strong> </font> </p> 
+           <p> &nbsp; <wbr> </p> 
+           <p> <font style="FONT-SIZE: 18px" color="#FF0000"> <strong> <font style="FONT-SIZE: 18px" color="#FF0000"> <strong> 本ID从来中午就只喝果汁，而且只喝鲜榨的，和任何牌子无关。 </strong> </font> </strong> </font> </p> 
+           <p> &nbsp; <wbr> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 本来说好要开新课，但看到很多人确实还是没搞清楚，而且，今天本来也不是说股票的，等于占用了别的时间来补这一课。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 线段的划分，就是上面课程里的两种情况，根据这两种情况的完全分类来，没有不能唯一去划分的。但一到实际划分，很多人就晕，为什么？因为基本的概念还是没搞清楚。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 首先，线段和笔，都是有方向的，从顶开始的笔一定结束在底，同样，以向上笔开始的线段一定结束于向上笔，不可能一个线段，开始是向上笔，结束于一个向下笔。由于向上的笔的开始分型是底，而向下笔的结束分型也是底，换言之，一个线段，不可能是从底到底或从顶到顶，这是一个最基本的概念。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 同样，正如同一笔不可能出现顶低于底的情况，同一线段中，两端的一顶一底，顶肯定要高于底，如果你划出一个不符合这基本要求的线段，那肯定是划错了。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 由于图形不断延续，因此，除非是新股上市后最开始的一段，否则任何一段都是破坏前一段的，如果你的划分，不能保证前面每一段都是被后一段破坏，那么这划分肯定不对。线段的破坏是可以逆时间传递的，也就是说被后线段破坏的线段，一定破坏前线段，如果违反这个原则，那线段的划分一定有问题。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 当然，实际划分中没必要都从上市第一天开始，一般都是从图K线中近期的最高或最低点开始，例如，如果你今天才开始进行划分1分钟图，那么，就可以从昨天下午跳水的最低点5224点开始，但这样，肯定对大的走势不可能有正确认识，要对这波行情有明确的分析，即使不从7月6日的3563点开始，也要从8月17日的4646点开始。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 选择好了开始点，就可以进行分段了。如果熟练了，就可以直接分段，因为分型、笔都可以心算就知道，直接就可以进行分段；但如果不熟练，还是先从分型开始，然后笔，再线段，这样比较稳妥。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 在实际划分中，会碰到一些古怪的线段。其实，所谓的古怪，是一点都不古怪，只是一般人心里有一个印象，觉得线段都是一波比一波高或低，很简单那种，其实，线段完全不必要这样。一般来说，在类似单边的走势中，线段都很简单，不会有太复杂的情况，而在震荡中，线段出现所谓古怪的可能性就大增了。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 所有古怪的线段，都是因为线段出现第一种情况的笔破坏后最终没有在该方向由该笔发展形成线段破坏所造成的，这是线段古怪的唯一原因。因为，如果线段能在该方向出现被线段破坏，那就很正常了，没什么古怪的。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 注意，这里有一个细节必须注意，线段最终肯定都会被线段破坏，但线段出现笔破坏后最终并不一定在该方向由该笔发展形成线段破坏。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 由最简单概念知道，任何线段都有方向的，例如线段B，其方向是下，也就是由向下笔开始的线段，那么其结束笔肯定也是向下笔。因此，线段出现第一种情况的笔破坏，这破坏的一笔肯定是向上笔，但这一笔之后，没有形成特征序列的分型，满足不了第一种线段破坏的情况，因此，就在这个方向上形成不了线段的破坏。 </font> </p> 
+           <p> &nbsp; <wbr> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 而线段，不可能被同方向的线段破坏，任何同方向的线段，或者互相毫无关系，或者就是其中一线段其实是前一线段的延续，也就是说前一线段其实根本没完成。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 但线段出现第一种情况的笔破坏后最终没有在该方向由该笔发展形成线段破坏时，在上面例子中的向上破坏笔完成后，接下来肯定是向下的笔，这笔肯定会形成一个向下的线段，否则，就意味着前面那向上破坏笔能延续出线段，这和假设矛盾。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 这个向下的线段，如果破了该向上笔的底，那么，原来的线段B就是没结束，在继续延续。这种情况下，如果那向上笔突破线段B的高点，这时候就会出现，线段的开始点并不是最高点的情况。（注意，和这个情况一样，昨天的贴图里，81那点应该在09051101的5268.74位置上，而82的位置不变，因为原来标记的位置是一个急跌，当时的数据收集可能有点乱，用数据修正功能后发现实际上比09051101时高，因此必须有此修正。） </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 这个向下的线段，如果没破该向上笔的底，那么就可以肯定，由这向上的笔可以延伸出一个线段来，这时候，线段B肯定被破坏了。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 注意，这个例子中有一个最关键的前提，就是线段B已经确认线段破坏了他前面的线段，如果线段B对前面线段的破坏都没确认，那就先确认，这里的分析都不适用了。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 从这个例子就知道，笔破坏与线段破坏的异同。对于线段破坏的第二种情况，例如线段B对线段A是第二种情况，而线段C没有形成第二特征序列的分型又直接新高或新低了，这时候，不能认为这是三个线段，线段A、B、C加起来只能算是一个线段。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 另外，一定要注意，对于第二种情况的第二特征序列的分型判断，必须严格按照包含关系的处理来，这里不存在第一种情况中的假设分界点两边不能进行包含关系处理的要求。为什么？因为在第一种情况中，如果分界点两边出现特征序列的包含关系，那证明对原线段转折的力度特别大，那当然不能用包含关系破坏这种力度的呈现。而在第二种情况的第二特征序列中，其方向是和原线段一致，包含关系的出现，就意味着原线段的能量充足，而第二种情况，本来就意味着对原线段转折的能量不足，这样一来，当然就必须按照包含关系来。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 通过上面的讲解，应该没有任何线段问题能难倒各位了，当然前提是能把上面的内容搞明白。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 注意，这里必须提醒一句，就是这在以前也曾说过，就是，如果线段中，最高或最低点不是线段的端点，那么，在任何以线段为基础的分析中，例如把线段为基础构成最小级别的中枢等，都可以把该线段标准化为最高低点都在端点。因为，在以线段为基础的分析中，都把线段当成一个没有内部结构的基本部件，所以，只需要关心这线段的实际区间就可以，这样就可以只看其高低点。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> 经过标准化处理后，所有向上线段都是以最低点开始最高点结束，向下线段都是以最高点开始最低点结束，这样，所以线段的连接，就形成一条延续不断、首尾相连的折线，这样，复杂的图形，就会十分地标准化，也为后面的中枢、走势类型等分析提供了最标准且基础的部件。 </font> </p> 
+           <p> <font style="FONT-SIZE: 16px"> &nbsp; <wbr> </font> </p> 
+          </div> 
+         </div> 
+         <!-- 正文结束 --> 
+         <div id="share" class="shareUp nor"> 
+          <div class="share SG_txtb clearfix"> 
+           <span class="share-title"> 分享： </span> 
+           <div class="bshare-custom" style="display:inline;margin-left:5px;"> 
+           </div> 
+          </div> 
+          <div class="up"> 
+           <div title="喜欢后让更多人看到" id="dbox_486e105c01000cio" class="upBox upBox_click" style="cursor: pointer;"> 
+            <p ti_title="教你炒股票78：继续说线段的划分" id="dbox2_486e105c01000cio" class="count"> </p> 
+            <p class="link"> <img width="15" height="15" align="absmiddle" src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" class="SG_icon SG_icon34"> 喜欢 </p> 
+           </div> 
+           <!--
+                <div class="upBox upBox_add">
+                    <p class="count">0</p>
+                    <p class="link"><img width="20" height="16" align="absmiddle" title="推荐" src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" class="SG_icon SG_icon214">赠金笔</p>
+                </div>
+--> 
+           <div class="upBox upBox_add"> 
+            <p class="count" id="goldPan-num"> 0 </p> 
+            <p class="link" id="goldPan-give"> <img class="SG_icon SG_icon214" src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" width="20" height="16" title="赠金笔" align="absmiddle"> 赠金笔 </p> 
+           </div> 
+          </div> 
+          <div class="clearit"> 
+          </div> 
+         </div> 
+         <div class="articalInfo"> 
+          <!-- 分享到微博 {$t_blog} --> 
+          <div>
+            阅读 
+           <span id="r_486e105c01000cio" class="SG_txtb"> </span> 
+           <em class="SG_txtb"> ┊ </em> 
+           <a href="#commonComment"> 评论 </a> 
+           <span id="c_486e105c01000cio" class="SG_txtb"> </span> 
+           <em class="SG_txtb"> ┊ </em> 
+           <a href="javascript:;" onclick="$articleManage('486e105c01000cio',5);return false;"> 收藏 </a> 
+           <span id="f_486e105c01000cio" class="SG_txtb"> </span> 
+           <em class="SG_txtb"> ┊ </em> 
+           <a href="#" id="quote_set_sign" onclick="return false ;"> 转载 </a> 
+           <a href="#" id="z_486e105c01000cio" onclick="return false ;" class="zznum"> </a> 
+           <span id="fn_教你炒股票78：继续说线段的划分" class="SG_txtb"> </span> 
+           <em class="SG_txtb"> ┊ </em> 
+           <a onclick="return false;" href="javascript:;"> <cite id="d1_digg_486e105c01000cio"> 喜欢 </cite> </a> 
+           <a id="d1_digg_down_486e105c01000cio" href="javascript:;"> <b> ▼ </b> </a> 
+           <em class="SG_txtb"> ┊ </em> 
+           <a href="http://blog.sina.com.cn/main_v5/ria/print.html?blog_id=blog_486e105c01000cio" target="_blank"> 打印 </a> 
+           <em class="SG_txtb"> ┊ </em> 
+           <a id="q_486e105c01000cio" onclick="report('486e105c01000cio');return false;" href="#"> 举报/Report </a> 
+          </div> 
+          <div class="IR"> 
+           <table> 
+            <tbody> 
+             <tr> 
+              <!--
+											<th class="SG_txtb" scope="row">已投稿到：</th>
+						<td>
+							<div class="IR_list">
+								<span><img class="SG_icon SG_icon36" src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" width="15" height="15" title="排行榜" align="absmiddle" /> <a href="http://blog.sina.com.cn/lm/114/105/day.html" class="SG_linkb" target="_blank">排行榜</a></span>							</div>
+						</td>
+					--> 
+             </tr> 
+            </tbody> 
+           </table> 
+          </div> 
+         </div> 
+         <div class="clearit"> 
+         </div> 
+         <div class="blogzz_zzlist borderc" id="blog_quote" style="display:none">
+           加载中，请稍候...... 
+         </div> 
+         <div class="articalfrontback SG_j_linedot1 clearfix" id="new_nextprev_486e105c01000cio"> 
+          <div> 
+           <span class="SG_txtb"> 前一篇： </span> 
+           <a href="http://blog.sina.com.cn/s/blog_486e105c01000cil.html"> 建行引领大盘前行 </a> 
+          </div> 
+          <div> 
+           <span class="SG_txtb"> 后一篇： </span> 
+           <a href="http://blog.sina.com.cn/s/blog_486e105c01000cix.html"> 值得鼓掌的下跌&lt;br&gt; </a> 
+          </div> 
+         </div> 
+         <div class="clearit"> 
+         </div> 
+         <div id="loginFollow"> 
+         </div> 
+         <div class="allComm"> 
+          <div class="allCommTit"> 
+           <div class="SG_floatL"> 
+            <strong> 评论 </strong> 
+            <span id="commAd_1" style="display:none;"> <span style="margin-left:15px; width:220px; display:inline-block;"> <a target="_blank" href="http://blog.sina.com.cn/lm/8/2009/0325/105340.html"> 重要提示：警惕虚假中奖信息 </a> </span> </span> 
+           </div> 
+           <div class="SG_floatR"> 
+            <a class="CP_a_fuc" href="#post"> [ <cite> 发评论 </cite> ] </a> 
+           </div> 
+          </div> 
+          <ul id="article_comment_list" class="SG_cmp_revert"> 
+           <!-- 循环始 --> 
+           <li> 评论加载中，请稍候... </li> 
+           <!-- 循环终  --> 
+          </ul> 
+          <div class="clearit"> 
+          </div> 
+          <div class="myCommPages SG_j_linedot1"> 
+           <div class="SG_page" id="commentPaging" style="display:none;"> 
+            <ul class="SG_pages"> 
+            </ul> 
+           </div> 
+           <div class="clearit"> 
+           </div> 
+          </div> 
+          <a name="post"> </a> 
+          <div class="writeComm"> 
+           <div class="allCommTit"> 
+            <div class="SG_floatL"> 
+             <strong> 发评论 </strong> 
+             <span> </span> 
+            </div> 
+            <div class="SG_floatR"> 
+            </div> 
+           </div> 
+           <div class="wrCommTit"> 
+            <div class="SG_floatL" id="commentNick" style="display:none;"> 
+            </div> 
+           </div> 
+           <div class="formTextarea"> 
+            <div style="float:left;" id="commonComment"> 
+             <iframe id="postCommentIframe" frameborder="0" style="border:1px solid #C7C7C7;
+		height:158px;width:448px;maring-top:1px;background-color:white;" src="http://blog.sina.com.cn/main_v5/ria/blank2.html"> </iframe> 
+             <textarea id="commentArea" tabindex="1" style="display:none;"></textarea> 
+            </div> 
+            <div id="mobileComment" style="float:left;display:none;"> 
+             <textarea id="mbCommentTa" style="width:438px;height:150px;border:1px solid #C7C7C7;line-height:18px;padding:5px;"></textarea> 
+            </div> 
+            <div class="faceblk" id="faceWrap"> 
+             <div id="smilesSortShow" class="faceline1"> 
+             </div> 
+             <ul id="smilesRecommended" class="faceline01"> 
+             </ul> 
+            </div> 
+            <div class="clearit"> 
+            </div> 
+           </div> 
+           <div class="formLogin"> 
+            <div class="SG_floatL"> 
+             <p id="commentlogin" style="display:none;"> <span> 登录名： </span> <input type="text" style="width: 115px;" id="login_name" tabindex="2"> <span> 密码： </span> <input type="password" style="width: 115px;" id="login_pass" tabindex="3"> <a href="https://login.sina.com.cn/getpass.html" target="_blank"> 找回密码 </a> <a href="https://login.sina.com.cn/signup/signup.php?entry=blog&amp;src=blogicp&amp;srcuid=1215172700" target="_blank"> 注册 </a> <input type="checkbox" id="login_remember" value="on"> <label for="login_remember" style="display:inline-block;" title="建议在网吧/公用电脑上取消该选项"> 记住登录状态 </label> </p> 
+             <p id="commentloginM" style="display:none;"> <span> 昵&nbsp;&nbsp;&nbsp;称： </span> <input type="text" style="width: 115px;" id="comment_anonyous" value="新浪网友"> </p> 
+             <p id="quote_comment_p"> 
+              <!--<input type="checkbox" id="bb"> <label for="bb"><img height="18" align="absmiddle" width="18" title="" src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" class="SG_icon SG_icon110">分享到微博 <img height="15" align="absmiddle" width="15" title="新" src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" class="SG_icon SG_icon11"></label>&nbsp;&nbsp;&nbsp;--> <input type="checkbox" id="cbCommentQuote" value="on"> <label for="cbCommentQuote"> 评论并转载此博文 </label> <img class="SG_icon SG_icon11" src="http://simg.sinajs.cn/blog7style/images/common/sg_trans.gif" width="15" height="15" title="新" align="absmiddle"> </p> 
+             <p id="geetest-box"> </p> 
+            </div> 
+            <span style="display: none; color: rgb(153, 153, 153); margin-left: 10px;" id="login_remember_caution"> </span> 
+            <!--<div class="SG_floatR" id="anonymity_cont"><input type="checkbox" id="anonymity"/><label for="anonymity">匿名评论</label></div>--> 
+           </div> 
+           <div class="formBtn"> 
+            <a href="javascript:;" onclick="return false;" class="SG_aBtn" tabindex="5"> <cite id="postcommentid"> 发评论 </cite> </a> 
+            <p class="SG_txtc"> 以上网友发言只代表其个人观点，不代表新浪网的观点或立场。 </p> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="clearit"> 
+         </div> 
+         <div class="articalfrontback articalfrontback2 clearfix"> 
+          <div class="SG_floatL"> 
+           <span class="SG_txtb"> &lt;&nbsp;前一篇 </span> 
+           <a href="http://blog.sina.com.cn/s/blog_486e105c01000cil.html"> 建行引领大盘前行 </a> 
+          </div> 
+          <div class="SG_floatR"> 
+           <span class="SG_txtb"> 后一篇&nbsp;&gt; </span> 
+           <a href="http://blog.sina.com.cn/s/blog_486e105c01000cix.html"> 值得鼓掌的下跌&lt;br&gt; </a> 
+          </div> 
+         </div> 
+         <div class="clearit"> 
+         </div> 
+        </div> 
+        <!--博文正文 end --> 
+        <script type="text/javascript">
+//<![CDATA[
+
+			var voteid="";
+		
+//]]>
+                </script> 
+       </div> 
+       <div class="SG_connFoot"> 
+       </div> 
+      </div> 
+     </div> 
+     <!--第二列start--> 
+     <!--第三列start--> 
+     <div id="column_3" class="SG_colWnone"> 
+      <div style="width:0px;height:0.1px;margin:0px;">
+        &nbsp;&nbsp; 
+      </div> 
+     </div> 
+     <!--第三列end--> 
+    </div> 
+    <!--主题内容结束 --> 
+    <div id="diggerFla" style="position:absolute;left:0px;top:0px;width:0px"> 
+    </div> 
+    <div class="sinablogfooter" id="sinablogfooter" style="position:relative;"> 
+     <p class="SG_linka"> <a href="http://help.sina.com.cn/" target="_blank"> 新浪BLOG意见反馈留言板 </a> 　电话：4000520066 提示音后按1键（按当地市话标准计费）　欢迎批评指正 </p> 
+     <p class="SG_linka"> <a href="http://corp.sina.com.cn/chn/" target="_blank"> 新浪简介 </a> | <a href="http://corp.sina.com.cn/eng/" target="_blank"> About Sina </a> | <a href="http://emarketing.sina.com.cn/" target="_blank"> 广告服务 </a> | <a href="http://www.sina.com.cn/contactus.html" target="_blank"> 联系我们 </a> | <a href="http://corp.sina.com.cn/chn/sina_job.html" target="_blank"> 招聘信息 </a> | <a href="http://www.sina.com.cn/intro/lawfirm.shtml" target="_blank"> 网站律师 </a> | <a href="http://english.sina.com" target="_blank"> SINA English </a> | <a href="http://members.sina.com.cn/apply/" target="_blank"> 会员注册 </a> | <a href="http://help.sina.com.cn/" target="_blank"> 产品答疑 </a> </p> 
+     <p class="copyright SG_linka"> Copyright © 1996 - 2018 SINA Corporation, All Rights Reserved </p> 
+     <p class="SG_linka"> 新浪公司 <a href="http://www.sina.com.cn/intro/copyright.shtml" target="_blank"> 版权所有 </a> </p> 
+     <a href="http://www.bj.cyberpolice.cn/index.jsp" target="_blank" class="gab_link"> </a> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="swfbox"> 
+   <object id="swfId" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="1" height="1" style="undefined"> <param name="movie" value="http://sjs.sinajs.cn/blog7swf/voteCookie.swf"> <param name="bgcolor" value="#00ff00"> <param name="quality" value="high"> <param name="allowScriptAccess" value="always"> <param name="flashvars" value="readyFun=readyFun"> </object> 
+  </div> 
+  <script id="PVCOUNTER_FORIE" type="text/javascript">
+    </script> 
+  <script type="text/javascript">
+//<![CDATA[
+
+var scope = {
+    $newTray : 1,
+    $setDomain : true,
+    $uid : "1215172700",
+    $PRODUCT_NAME : "blog7",      //blog7photo,blog7icp
+    $pageid : "article",
+    $key :  "c78bcf12120b03322a2ac8d330eb00a2",
+    $uhost : "chzhshch",
+    $ownerWTtype :"",
+    $private: {"pageset":0,"tj":0,"adver":0,"sms":0,"ad":0,"blogsize":0,"cms":0,"hidecms":0,"top":"486e105c010001s8","invitationset":0,"p4p":0,"spamcms":0,"init7":0,"quote":0,"foot":0,"active":"4","t_sina":"1215172700","oauth_token":1,"oauth_token_secret":1,"uname":"","p_push_t":"1","p_get_t":"1"},
+    $summary: "...  (来自 @头条博客)",
+    $is_photo_vip:0,
+		 $nClass:0,
+		 $articleid:"486e105c01000cio",
+		 $sort_id:105,
+		 $cate_id:"",
+		 $isCommentAllow:0,
+		 $album_pic:"",
+		 $pn_x_rank:0,
+		 $x_quote_c:"3498",
+		 $flag2008:"",
+		     component_lists:{"2":{"size":730,"list":[920]},"1":{"size":210,"list":[901,903,904]}},
+    formatInfo:1,
+    UserPic:[{"pid":"","repeat":"repeat-x","align-h":"center","align-v":"top","apply":"0"},{"pid":"","repeat":"repeat-x","align-h":"center","align-v":"top","apply":""},{"pid":"","repeat":"repeat-x","align-h":"center","align-v":"top","apply":"0"}],
+    UserBabyPic:{"photoX":0,"photoY":0,"photoURL":null,"angle":0,"zoom":0,"maskX":0,"maskY":0,"maskURL":null,"frameURL":null},
+    UserColor:1,
+    backgroundcolor:"rgb(248, 248, 248)",
+    $shareData:{"title":"\u6559\u4f60\u7092\u80a1\u796878\uff1a\u7ee7\u7eed\u8bf4\u7ebf\u6bb5\u7684\u5212\u5206@\u65b0\u6d6a\u535a\u5ba2","content":" \u60bc\u5ff5 \u5e15\u74e6\u7f57\u8482  \uff08\u867d\u7136\u5386\u53f2\u4e0a\u6709\u592a\u591a\u4eba\u6bd4\u4f60\u597d\uff0c\u4f46\u5f53\u4ee3\uff0c\u4f60\u662f\u6700\u597d\u7684\uff09   \u58f0\u8ba8 \u4e01\u6bc5 \uff08\u6837\u5b50\u4e11\u964b\u4e0d\u662f\u9519\uff0c\u51fa\u6765\u5ffd\u60a0\u5c31\u4e0d\u884c\uff09 \u6234\u7389\u5f3a ...  (\u6765\u81ea @\u5934\u6761\u535a\u5ba2)","url":"http:\/\/blog.sina.com.cn\/s\/blog_486e105c01000cio.html","pic":""},
+    tpl:"3_9",
+    reclist:0    };
+var $encrypt_code = "b900b5be3cfbedcbd1fd55f3f8dacac8";
+
+//]]>
+    </script> 
+  <script type="text/javascript" src="http://sjs.sinajs.cn/blog7common/js/boot.js">
+    </script> 
+  <script type="text/javascript">
+//<![CDATA[
+__load_js();
+//]]>
+    </script> 
+  <script type="text/javascript">
+//<![CDATA[
+__render_page();
+//]]>
+    </script> 
+  <!--
+<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=b436f96b-ce3c-469f-93ca-9c0c406fcf10&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+<script type="text/javascript" charset="utf-8">
+        bShare.addEntry({pic: "", title:"分享自缠中说禅  《教你炒股票78：继续说线段的划分》", summary:"...  (来自 @头条博客)"});
+     </script>--> 
+  <script type="text/javascript" src="http://sjs.sinajs.cn/xblogtheme/js/blog680-min.js">
+    </script> 
+  <script type="text/javascript">
+//<![CDATA[
+
+        var slotArr = ['atcTitLi_SLOT_41', 'atcTitLi_SLOT_42','loginBarActivity']; //广告位id
+        var sourceArr = ['SLOT_41','SLOT_42','SLOT_43,SLOT_47,SLOT_48'];  //广告资源id
+        SinaBlog680.staticBox(slotArr, sourceArr);
+
+//]]>
+    </script>   
+ </body>
+</html>
