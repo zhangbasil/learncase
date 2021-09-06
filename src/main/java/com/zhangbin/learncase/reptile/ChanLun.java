@@ -39,15 +39,15 @@ public class ChanLun {
             Elements elements = document.select("a");
             for (Element element : elements) {
                 String text = element.text();
-                if (!StringUtils.isEmpty(text) && text.contains("教你炒股")) {
+                if (!StringUtils.isEmpty(text) && text.contains("教你炒股票")) {
                     String href = element.attr("href");
                     Document detail = DocumentUtils.getDocument(href);
-                    System.out.println(text + " " + href);
                     String html = detail.outerHtml();
                     html = "<!DOCTYPE html>\n" +
                             "<html lang=\"en\">\n" +
                             "<head>" + html.split("<head>")[1];
-                    FileOutputStream fileOutputStream = new FileOutputStream(text + ".html");
+
+                    FileOutputStream fileOutputStream = new FileOutputStream(text.replace("教你炒股票","缠论") + ".html");
                     fileOutputStream.write(html.getBytes());
                     fileOutputStream.close();
                 }
