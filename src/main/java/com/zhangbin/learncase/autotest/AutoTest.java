@@ -22,6 +22,11 @@ public class AutoTest {
     private void init() {
         System.setProperty("webdriver.chrome.driver",
                 "F:/other/zhangbin/learncase/src/main/java/com/zhangbin/learncase/autotest/chromedriver.exe");
+
+//        /Users/admin/Documents/work
+
+        System.setProperty("webdriver.chrome.driver",
+                "/Users/admin/Documents/work/chromedriver");
         driver = new ChromeDriver();
     }
 

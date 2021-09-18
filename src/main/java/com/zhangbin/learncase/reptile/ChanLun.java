@@ -11,15 +11,15 @@ import java.util.List;
 
 /**
  * @author <a href="mailto:hbsy_zhb@163.com">zhangbin</a>
+ *
+ * 1.中信重工  跳空（突破压力位）高开涨停  回到涨停实体的地点买入
+ * 2.云煤能源   涨停后高开低走收盘破5日线 涨停K线破一半 第三天高开下杀到10日线附近涨停K线吃掉三分之二 第四天大涨
+ *
+ *
  */
 public class ChanLun {
 
 
-    private static void createHtml(Document document, Elements elements) {
-
-
-
-    }
 
 
     public static void main(String[] args) throws Exception {

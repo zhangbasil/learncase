@@ -4,11 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.Random;
+import java.util.concurrent.*;
 
 /**
  * @author zhangbin
@@ -40,37 +37,40 @@ public class CountDownLatchTest {
 
     @Test
     void doTestWithCountDown() throws InterruptedException {
-        final List<Integer> datas = new ArrayList<>();
-        final ExecutorService TASK_POOL = Executors.newFixedThreadPool(20);
+        final ExecutorService executorService = Executors.newFixedThreadPool(20);
         final CountDownLatch countDownLatch = new CountDownLatch(20);
-        Runnable task = () -> {
-            try {
-                countDownLatch.await();//这里等待其他线程就绪后开始放行
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            for (int i = 0; i < 100; i++) {
-                datas.add(i);
-            }
-        };
         for (int i = 0; i < 20; i++) {
-            TASK_POOL.execute(task);
+            System.out.println("threadName 【 " + Thread.currentThread().getName() + " 】线程池开始执行任务....");
+            executorService.execute(() -> {
+                String threadName = Thread.currentThread().getName();
+                try {
+                    System.out.println("threadName 【 " + threadName + " 】就绪。。");
+                    countDownLatch.await();//这里等待其他线程就绪后开始放行
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("threadName 【 " + threadName + " 】执行任务。。");
+                doWork();
+            });
+            System.out.println("threadName 【 " + Thread.currentThread().getName() + " 】执行完成....");
             countDownLatch.countDown();//每个任务提交完毕后执行
+            System.out.println("threadName 【 " + Thread.currentThread().getName() + " 】countDown 完成....");
         }
-        TASK_POOL.shutdown();
-        TASK_POOL.awaitTermination(50, TimeUnit.SECONDS);
-        System.out.println(datas.size());
+        executorService.shutdown();
+        executorService.awaitTermination(50, TimeUnit.SECONDS);
     }
 
 
-
-
-
-
-
-
-
-
+    private void doWork() {
+        int number = new Random().nextInt(10);
+        String threadName = Thread.currentThread().getName();
+        System.out.println("threadName 【 " + threadName + " 】开始工作 需要耗时：" + number + " 秒");
+        try {
+            Thread.sleep(number * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @Test
@@ -159,11 +159,23 @@ public class CountDownLatchTest {
     @Test
     void workerRunnableTest() throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(10);
-        Executor executor = Executors.newSingleThreadExecutor();
+        Executor executor = Executors.newFixedThreadPool(10);
 
         for (int i = 0; i < 10; i++) {
-            executor.execute(new WorkerRunnable(countDownLatch, i));
-            countDownLatch.await();
+            executor.execute(() -> {
+                String threadName = Thread.currentThread().getName();
+                System.out.println("threadName 【 " + threadName + " 】就绪。。");
+
+                try {
+                    countDownLatch.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            });
+
+
+            countDownLatch.countDown();
         }
 
     }
